@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq2ao3802hie8"]
+
+[ext_resource type="PackedScene" uid="uid://5u2a6s7g2ds" path="res://Buger work.glb" id="1_wwmi0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r30d7"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.0
+
+[node name="Buger work" instance=ExtResource("1_wwmi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4937, 5.26713, -44.2659)
+
+[node name="counter" parent="." index="95"]
+transform = Transform3D(0.318639, 0, 0, 0, 0.318639, 0, 0, 0, 0.318639, -1.3539, 0.562689, 9.2181)
+
+[node name="Light" parent="." index="127"]
+surface_material_override/0 = SubResource("StandardMaterial3D_r30d7")
