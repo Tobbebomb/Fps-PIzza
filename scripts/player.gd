@@ -2,6 +2,9 @@ class_name Player extends CharacterBody3D
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+@onready var hand = $CameraPivot/SmoothCamera/hand
+@onready var interaction = $CameraPivot/SmoothCamera/interaction
+
 @export_group("Controls map names")
 @export var MOVE_FORWARD: String = "move_forward"
 @export var MOVE_BACK: String = "move_back"
@@ -78,6 +81,8 @@ var can_crouch: bool = true
 var can_sprint: bool = true
 var can_pause: bool = true
 
+var picked_object
+var pull_power = 4
 
 func _ready() -> void:
 	default_view_bobbing_amount = view_bobbing_amount
@@ -85,6 +90,11 @@ func _ready() -> void:
 	if can_pause:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+func _input(event):
+	if Input.is_action_pressed("lclick"):
+		pick_object()
+	elif picked_object !=null:
+		remove_object()
 
 func check_controls() -> void:
 	if !InputMap.has_action(MOVE_FORWARD):
@@ -155,6 +165,16 @@ func _physics_process(delta: float) -> void:
 		can_climb = true
 	
 	move_and_slide()
+	
+	
+	if picked_object != null:
+		var a = picked_object.global_position
+		var b = hand.global_position
+		var c = a.distance_to(b)
+		var calc = (a.direction_to(b))*pull_power*c
+		picked_object.set_linear_velocity(calc)
+		#direction_to is same as (a.vec3-b.vec3).normalize()
+
 
 
 func _process(_delta: float):
@@ -269,12 +289,24 @@ func setup_can_climb_timer(callback: Callable = _on_grab_available_timeout) -> v
 	can_climb_timer.start()
 
 
+
 func _on_grab_available_timeout() -> void:
 	can_climb = true
 	
 	if can_climb_timer != null:
 		can_climb_timer.queue_free()
 
+
+#grab hand du vet vad jag menar tobias
+func pick_object():
+	var collider = interaction.get_collider()
+	if collider != null and collider is RigidBody3D:
+		picked_object = collider
+
+
+func remove_object():
+	if picked_object != null:
+		picked_object = null 
 
 ## Triggers on every state transition. Could be useful for side effects and debugging
 ## Note that it's triggered after the 'state' "enter" method

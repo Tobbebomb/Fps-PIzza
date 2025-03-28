@@ -1,24 +1,78 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0ac1vbq0ns43"]
+[gd_scene load_steps=8 format=3 uid="uid://c0ac1vbq0ns43"]
 
 [ext_resource type="PackedScene" uid="uid://bq2ao3802hie8" path="res://buger_work.tscn" id="2_jnx65"]
 [ext_resource type="PackedScene" uid="uid://dlbkch6iuy8gn" path="res://scripts/player.tscn" id="3_aob8f"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iuw7y"]
+
+[sub_resource type="Sky" id="Sky_j8b7t"]
+sky_material = SubResource("ProceduralSkyMaterial_iuw7y")
+
 [sub_resource type="Environment" id="Environment_jja8u"]
-ambient_light_color = Color(0.99558, 0.99558, 0.99558, 1)
+background_mode = 2
+sky = SubResource("Sky_j8b7t")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+fog_enabled = true
+fog_light_color = Color(0.56, 0.431667, 0.252, 1)
+fog_light_energy = 1.5
+fog_sun_scatter = 2.5
+fog_density = 0.005
+fog_sky_affect = 0.695
+volumetric_fog_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ldib6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kal1q"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("3_aob8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.551398, 0)
-allow_crouch = true
-allow_climb = true
+
+[node name="interaction" type="RayCast3D" parent="Player/CameraPivot/SmoothCamera" index="1"]
+target_position = Vector3(0, 0, -5)
+
+[node name="hand" type="Marker3D" parent="Player/CameraPivot/SmoothCamera" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08165e-12, -0.00225425, -3.80295)
 
 [node name="Buger work" parent="." instance=ExtResource("2_jnx65")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -58)
+
+[node name="Door_C" parent="Buger work" index="100"]
+transform = Transform3D(0.658159, 0, 1.37825, 0, 1.52733, 0, -1.37825, 0, 0.658159, 3.75743, 1.32088, 1.0364)
+
+[node name="Door_Fr" parent="Buger work" index="103"]
+transform = Transform3D(0.515919, 0, 1.47989, 0, 1.52733, 0, -2.02138, 0, 0.377714, -1.11223, 1.26394, -1.43433)
+
+[node name="Door_W" parent="Buger work" index="104"]
+transform = Transform3D(-0.405927, 0, -1.4724, 0, 1.52733, 0, 1.4724, 0, -0.405927, 6.49479, 1.30867, 4.58584)
+
+[node name="Door_W_01" parent="Buger work" index="105"]
+transform = Transform3D(-0.53297, -0.00896085, -1.4313, -0.000615073, 1.5273, -0.00933289, -1.43132, 0.00268036, 0.532963, 6.49606, 1.31203, 1.05731)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Buger work/Light_015" index="1"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jja8u")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.929506, -0.287214, 0.231356, -0.026343, 0.677413, 0.735131, -0.367864, 0.677214, -0.637226, 0, 0, 0)
+transform = Transform3D(-0.154271, 0.949924, 0.271744, 0.177996, -0.243816, 0.953347, 0.971863, 0.195443, -0.131469, 0, 0, 0)
+light_color = Color(1, 0.765667, 0.26, 1)
+light_energy = 0.5
 shadow_enabled = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.194016, 1.3577, -5.40877)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_ldib6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_kal1q")
+
+[editable path="Player"]
+[editable path="Buger work"]
