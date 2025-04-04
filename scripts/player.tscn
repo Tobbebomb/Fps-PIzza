@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://dlbkch6iuy8gn"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_5ras8"]
+[ext_resource type="Script" path="res://scripts/player backup.gd" id="1_mxwtn"]
 [ext_resource type="Script" path="res://scripts/player_state.gd" id="2_1py82"]
 [ext_resource type="Script" path="res://scripts/player_state_machine.gd" id="2_wwa58"]
 [ext_resource type="Script" path="res://scripts/player_move_state/idle.gd" id="3_xe000"]
@@ -240,7 +240,7 @@ height = 1.8
 height = 1.8
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_5ras8")
+script = ExtResource("1_mxwtn")
 allow_crouch = false
 allow_climb = false
 
@@ -318,8 +318,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12
 
 [node name="SmoothCamera" type="Camera3D" parent="CameraPivot"]
 script = ExtResource("2_1py82")
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="CameraPivot/SmoothCamera"]
 
 [node name="StateMachine" type="Node" parent="."]
 unique_name_in_owner = true

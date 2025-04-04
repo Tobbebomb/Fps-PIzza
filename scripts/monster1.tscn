@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2n57a150p0x6"]
+
+[ext_resource type="PackedScene" uid="uid://n4hww4se5tw6" path="res://Test.fbx" id="1_ywsv0"]
+
+[node name="Test" instance=ExtResource("1_ywsv0")]
+
+[node name="pCube8" parent="QuickRigCharacter_Reference/Skeleton3D" index="0"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
