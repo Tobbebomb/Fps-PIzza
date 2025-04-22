@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c45rovuh00osa"]
+
+[ext_resource type="PackedScene" uid="uid://da6kql1ooye80" path="res://gun.01.glb" id="1_66i1p"]
+
+[node name="gun_01" instance=ExtResource("1_66i1p")]
+
+[node name="Base" parent="." index="0"]
+cast_shadow = 0
+
+[node name="Slider" parent="." index="1"]
+cast_shadow = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+root_node = NodePath("../Slider")

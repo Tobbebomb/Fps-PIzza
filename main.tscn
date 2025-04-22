@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0ac1vbq0ns43"]
+[gd_scene load_steps=13 format=3 uid="uid://c0ac1vbq0ns43"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_e0l1u"]
 [ext_resource type="PackedScene" uid="uid://bj8ls7xwa4t2h" path="res://Buger work real.tscn" id="2_2asof"]
 [ext_resource type="PackedScene" uid="uid://dlbkch6iuy8gn" path="res://scripts/player.tscn" id="3_aob8f"]
 [ext_resource type="PackedScene" uid="uid://c2n57a150p0x6" path="res://scripts/monster1.tscn" id="4_k2upx"]
 [ext_resource type="PackedScene" uid="uid://byeiglceyf8mj" path="res://small monster only real.tscn" id="5_gbv4x"]
+[ext_resource type="PackedScene" uid="uid://dn1rnpcart4pr" path="res://gun.tscn" id="6_hhfhw"]
+[ext_resource type="PackedScene" uid="uid://c45rovuh00osa" path="res://gun_01.tscn" id="7_d60p1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iuw7y"]
 
@@ -188,6 +190,12 @@ transform = Transform3D(0.172737, -0.00115824, 0.984967, 0.0012053, 0.999999, 0.
 
 [node name="small monster only" parent="." instance=ExtResource("5_gbv4x")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, -28.0494)
+
+[node name="gun" parent="." instance=ExtResource("6_hhfhw")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 11.2488, 0.994752, 0)
+
+[node name="gun_01" parent="." instance=ExtResource("7_d60p1")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 10.5856, 0.996151, -0.11801)
 
 [editable path="Player"]
 [editable path="Buger work"]

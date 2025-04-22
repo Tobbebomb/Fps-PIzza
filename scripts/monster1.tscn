@@ -1168,24 +1168,24 @@ _data = {
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
 [node name="Skeleton3D" parent="QuickRigCharacter_Reference" index="0"]
-bones/0/position = Vector3(0.0056153, 0.52275, 0.0247272)
-bones/0/rotation = Quaternion(0.49515, 0.504804, 0.49515, 0.504804)
+bones/0/position = Vector3(0.0056153, 0.523437, 0.0249483)
+bones/0/rotation = Quaternion(0.57301, 0.330419, 0.627953, 0.41007)
 bones/1/position = Vector3(0.00397257, -0.0259038, 0.0492808)
-bones/1/rotation = Quaternion(-0.00444419, 0.00344784, 0.969676, 0.244331)
+bones/1/rotation = Quaternion(-0.00440056, 0.00343981, 0.969784, 0.243901)
 bones/1/scale = Vector3(1, 1, 1)
-bones/2/position = Vector3(0.311769, -0.000886964, 1.89139e-05)
-bones/2/rotation = Quaternion(-0.00602668, -0.00111454, 0.245882, 0.96928)
+bones/2/position = Vector3(0.311771, 0.000297522, -7.08093e-06)
+bones/2/rotation = Quaternion(-0.00601194, -0.00106115, 0.242707, 0.97008)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/position = Vector3(0.220483, 2.81398e-07, -8.22283e-08)
-bones/3/rotation = Quaternion(0.0039175, -0.00151923, -0.710778, 0.703404)
+bones/3/rotation = Quaternion(0.00393381, -0.00153248, -0.708771, 0.705426)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(0.0283324, -1.4557e-10, 2.84064e-08)
 bones/4/rotation = Quaternion(-0.000262693, -0.000360428, -0.0107504, 0.999942)
-bones/5/rotation = Quaternion(0.0326788, -0.00776678, -0.237459, 0.970817)
+bones/5/rotation = Quaternion(0.0326601, -0.00782716, -0.235044, 0.971404)
 bones/6/position = Vector3(-0.311836, 1.38105e-05, -1.04046e-06)
-bones/6/rotation = Quaternion(-0.0181675, -0.00431922, 0.229445, 0.973143)
+bones/6/rotation = Quaternion(-0.018204, -0.00422001, 0.224008, 0.974408)
 bones/7/position = Vector3(-0.218097, -3.82654e-07, -3.60771e-08)
-bones/7/rotation = Quaternion(-0.0185396, 0.00302438, -0.680563, 0.732449)
+bones/7/rotation = Quaternion(-0.0184498, 0.0028715, -0.678281, 0.734565)
 bones/7/scale = Vector3(1, 0.999999, 1)
 bones/8/position = Vector3(-0.0312602, -7.04315e-09, -3.60619e-09)
 bones/8/rotation = Quaternion(2.55054e-05, 5.77423e-08, -1.47274e-12, 1)
@@ -1196,17 +1196,17 @@ bones/10/rotation = Quaternion(0, -1.54074e-33, 0, 1)
 bones/11/position = Vector3(0.0182133, -4.15105e-10, -1.19262e-18)
 bones/11/rotation = Quaternion(0, -5.73534e-26, 0.0252852, 0.99968)
 bones/12/position = Vector3(0.0199357, -0.0112801, 0.0503353)
-bones/12/rotation = Quaternion(0.031721, 0.047307, 0.746619, 0.662809)
+bones/12/rotation = Quaternion(0.0283535, 0.0472832, 0.746757, 0.662808)
 bones/13/position = Vector3(0.0578654, -7.53247e-07, 2.11986e-06)
-bones/13/rotation = Quaternion(-1.29243e-07, -0.000599074, 0.622947, 0.782264)
+bones/13/rotation = Quaternion(4.03928e-07, -0.000588678, 0.623139, 0.782111)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/position = Vector3(0.0676402, 2.80239e-07, -1.37466e-08)
-bones/14/rotation = Quaternion(-1.39041e-25, 1.84631e-25, 5.63624e-05, 1)
+bones/14/rotation = Quaternion(-1.3884e-25, 1.84328e-25, 5.63624e-05, 1)
 bones/15/position = Vector3(0.0199357, -0.0112801, -0.0503353)
-bones/15/rotation = Quaternion(0.0571574, -0.0703231, -0.674615, 0.732586)
+bones/15/rotation = Quaternion(0.0573718, -0.0664433, -0.677328, 0.730425)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/position = Vector3(-0.0578654, 7.52874e-07, -2.08181e-06)
-bones/16/rotation = Quaternion(1.53454e-05, -0.000797492, 0.641306, 0.767285)
+bones/16/rotation = Quaternion(1.84335e-05, -0.000790958, 0.643135, 0.765752)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/position = Vector3(-0.0676402, -3.0979e-07, -2.08884e-08)
 bones/17/rotation = Quaternion(-0.130557, 0.270185, 0.133626, 0.94451)
@@ -1214,97 +1214,97 @@ bones/18/position = Vector3(0.0802021, 1.22253e-09, -4.98733e-18)
 bones/18/rotation = Quaternion(0, 3.08149e-33, 0, 1)
 
 [node name="QuickRigCharacter_Ctrl_HipsEffector" parent="QuickRigCharacter_Ctrl_Reference" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0056153, 0.534021, 0.00106805)
+transform = Transform3D(0.990637, -0.00963518, -0.136183, -0.0549734, 0.884911, -0.462503, 0.124966, 0.465659, 0.876096, 0.0056153, 0.534708, 0.00128919)
 
 [node name="QuickRigCharacter_Ctrl_LeftAnkleEffector" parent="QuickRigCharacter_Ctrl_Reference" index="1"]
-transform = Transform3D(0.993591, -0.0357897, 0.107216, 0.0320772, 0.998832, 0.036153, -0.108385, -0.0324822, 0.993578, 0.0691814, 0.0125059, -0.0169716)
+transform = Transform3D(0.999011, -0.0188903, 0.0402471, 0.0392566, -0.0501588, -0.997969, 0.0208706, 0.998563, -0.0493675, 0.0254845, 0.150715, -0.351975)
 
 [node name="QuickRigCharacter_Ctrl_RightAnkleEffector" parent="QuickRigCharacter_Ctrl_Reference" index="2"]
-transform = Transform3D(0.998453, -0.0189376, 0.0522775, -0.0123013, 0.841676, 0.539842, -0.0542241, -0.53965, 0.840141, -0.0497525, 0.0151575, 0.0131415)
+transform = Transform3D(0.998453, -0.0189376, 0.0522775, -0.0123013, 0.841676, 0.539842, -0.0542241, -0.53965, 0.840141, -0.0592043, 0.0366111, 0.290532)
 
 [node name="QuickRigCharacter_Ctrl_LeftWristEffector" parent="QuickRigCharacter_Ctrl_Reference" index="3"]
-transform = Transform3D(0.110322, -0.993141, 0.0387335, -0.990605, -0.113042, -0.0769674, 0.080818, -0.0298784, -0.996281, 0.000629202, 0.466892, 0.0791381)
+transform = Transform3D(0.101849, -0.993859, 0.0432503, -0.983104, -0.107203, -0.148374, 0.1521, -0.0274078, -0.987985, -0.0120025, 0.458906, 0.079999)
 
 [node name="QuickRigCharacter_Ctrl_RightWristEffector" parent="QuickRigCharacter_Ctrl_Reference" index="4"]
-transform = Transform3D(-0.37489, 0.913605, 0.157431, 0.853056, 0.273461, 0.444427, 0.362979, 0.300908, -0.881874, -0.0520251, 0.401594, 0.191131)
+transform = Transform3D(-0.377685, 0.917192, 0.126935, 0.848221, 0.287745, 0.444662, 0.371316, 0.275611, -0.886659, -0.0500035, 0.38064, 0.214057)
 
 [node name="QuickRigCharacter_Ctrl_LeftKneeEffector" parent="QuickRigCharacter_Ctrl_Reference" index="5"]
-transform = Transform3D(0.997481, -0.0191927, 0.068291, 0.0458434, 0.909069, -0.414115, -0.0541332, 0.416203, 0.907659, 0.0649498, 0.212939, 0.0747946)
+transform = Transform3D(0.998839, -0.0389065, -0.0284003, -0.0212372, 0.173506, -0.984604, 0.0432352, 0.984064, 0.172478, 0.0169062, 0.188971, -0.135007)
 
 [node name="QuickRigCharacter_Ctrl_RightKneeEffector" parent="QuickRigCharacter_Ctrl_Reference" index="6"]
-transform = Transform3D(0.998578, 0.0224383, 0.0483495, 0.0131776, 0.774997, -0.631827, -0.0516479, 0.631566, 0.7736, -0.0448588, 0.184182, 0.150884)
+transform = Transform3D(0.999923, -0.00844088, 0.00905673, 0.0041083, 0.916319, 0.400427, -0.0116788, -0.400359, 0.916284, -0.0610453, 0.236458, 0.203217)
 
 [node name="QuickRigCharacter_Ctrl_LeftElbowEffector" parent="QuickRigCharacter_Ctrl_Reference" index="7"]
-transform = Transform3D(0.110317, -0.993141, 0.0387461, -0.990597, -0.113041, -0.0770766, 0.0809278, -0.0298788, -0.996272, -0.00662909, 0.533341, 0.0722101)
+transform = Transform3D(0.101843, -0.993859, 0.043262, -0.983088, -0.107202, -0.148481, 0.152207, -0.0274087, -0.987969, -0.0188912, 0.525402, 0.069704)
 
 [node name="QuickRigCharacter_Ctrl_RightElbowEffector" parent="QuickRigCharacter_Ctrl_Reference" index="8"]
-transform = Transform3D(0.178455, 0.98095, -0.0767537, 0.971621, -0.163374, 0.171059, 0.155261, -0.105102, -0.982266, -0.0401859, 0.467361, 0.201516)
+transform = Transform3D(0.168061, 0.980097, -0.105664, 0.974522, -0.149034, 0.167617, 0.148534, -0.131142, -0.980173, -0.0386359, 0.446556, 0.224105)
 
 [node name="QuickRigCharacter_Ctrl_ChestEndEffector" parent="QuickRigCharacter_Ctrl_Reference" index="10"]
 transform = Transform3D(1, -5.55112e-17, -1.41023e-26, 5.55112e-17, 1, 5.08088e-10, -1.41023e-26, -5.08088e-10, 0.999999, 0.013324, 0.581291, -0.011193)
 
 [node name="QuickRigCharacter_Ctrl_LeftFootEffector" parent="QuickRigCharacter_Ctrl_Reference" index="11"]
-transform = Transform3D(1, 0.000292193, 0.000842775, -0.000310245, 0.999769, 0.0214996, -0.000836299, -0.0214999, 0.999768, 0.0723817, 0.00552507, 0.0103001)
+transform = Transform3D(1, 0.000292193, 0.000842776, -0.000310245, 0.999769, 0.0214996, -0.000836299, -0.0214999, 0.999768, 0.0267294, 0.123983, -0.361279)
 
 [node name="QuickRigCharacter_Ctrl_RightFootEffector" parent="QuickRigCharacter_Ctrl_Reference" index="12"]
-transform = Transform3D(1, -2.44921e-16, 7.98208e-09, 2.44921e-16, 1, 9.77491e-25, -7.98208e-09, 9.77491e-25, 1, -0.0480168, 0.00447821, 0.0424697)
+transform = Transform3D(1, -2.44922e-16, 7.98208e-09, 2.44922e-16, 1, 9.77494e-25, -7.98208e-09, 9.77494e-25, 1, -0.0574686, 0.0434837, 0.320978)
 
 [node name="QuickRigCharacter_Ctrl_LeftShoulderEffector" parent="QuickRigCharacter_Ctrl_Reference" index="13"]
-transform = Transform3D(-0.0139555, -0.993212, 0.115477, -0.146733, -0.112204, -0.982791, 0.989077, -0.0306597, -0.144172, -0.00574405, 0.540498, 0.0151771)
+transform = Transform3D(-0.0202978, -0.993918, 0.108232, -0.0749664, -0.106436, -0.991489, 0.996979, -0.0282388, -0.0723501, -0.0177187, 0.529739, 0.0120133)
 
 [node name="QuickRigCharacter_Ctrl_RightShoulderEffector" parent="QuickRigCharacter_Ctrl_Reference" index="14"]
-transform = Transform3D(-0.0445911, 0.981155, -0.188006, 0.342819, -0.161737, -0.925374, -0.938342, -0.105716, -0.329147, -0.0433152, 0.487002, 0.147259)
+transform = Transform3D(-0.0761801, 0.980197, -0.182785, 0.333606, -0.147696, -0.931071, -0.939629, -0.131907, -0.315748, -0.0430426, 0.46586, 0.169732)
 
 [node name="QuickRigCharacter_Ctrl_LeftHipEffector" parent="QuickRigCharacter_Ctrl_Reference" index="16"]
-transform = Transform3D(0.999768, -0.00751088, -0.0201617, 0.0133675, 0.951117, 0.30854, 0.0168587, -0.308739, 0.950997, 0.0626049, 0.509571, -0.0211496)
+transform = Transform3D(0.991851, 0.0730699, -0.104362, -0.112852, 0.884046, -0.45357, 0.0591189, 0.461652, 0.885088, 0.0396874, 0.464589, 0.00892519)
 
 [node name="QuickRigCharacter_Ctrl_RightHipEffector" parent="QuickRigCharacter_Ctrl_Reference" index="17"]
-transform = Transform3D(0.998761, -0.0330399, 0.0372063, 0.0112447, 0.878257, 0.478057, -0.0484716, -0.477047, 0.87754, -0.0551596, 0.458018, 0.00205676)
+transform = Transform3D(0.99824, 0.00992792, -0.0584706, 0.0313197, 0.74896, 0.661875, 0.0503632, -0.662541, 0.74733, -0.0579515, 0.470008, -0.00339169)
 
 [node name="QuickRigCharacter_Ctrl_Hips" parent="QuickRigCharacter_Ctrl_Reference" index="18"]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0056153, 0.52275, 0.0247272)
+transform = Transform3D(0.990637, -0.00963518, -0.136183, -0.0549734, 0.884911, -0.462503, 0.124966, 0.465659, 0.876096, 0.00561531, 0.523437, 0.0249483)
 
 [node name="QuickRigCharacter_Ctrl_LeftUpLeg" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips" index="0"]
-transform = Transform3D(0.999768, -0.00751088, -0.0201617, 0.0133675, 0.951118, 0.308541, 0.0168587, -0.308739, 0.950997, 0.0492809, 0.00347172, -0.0259757)
+transform = Transform3D(0.996156, 0.0814779, 0.0321549, -0.0818922, 0.996572, 0.0117838, -0.0310845, -0.0143718, 0.999413, 0.0492809, 0.00347172, -0.0259757)
 
 [node name="QuickRigCharacter_Ctrl_LeftLeg" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_LeftUpLeg" index="0"]
-transform = Transform3D(0.99695, -1.96621e-05, 0.0780414, 0.0528233, 0.736278, -0.674614, -0.0574469, 0.676679, 0.734034, 0, -0.311771, 0)
+transform = Transform3D(0.995653, 6.51181e-06, 0.0931429, 0.0741701, 0.604841, -0.792885, -0.0563418, 0.796346, 0.602211, 0, -0.311771, 0)
 
 [node name="QuickRigCharacter_Ctrl_LeftFoot" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_LeftUpLeg/QuickRigCharacter_Ctrl_LeftLeg" index="0"]
-transform = Transform3D(0.998426, 0.0118485, 0.0548179, -0.0350193, 0.895175, 0.444337, -0.0438069, -0.445557, 0.894181, 8.88178e-18, -0.220483, -4.44089e-18)
+transform = Transform3D(0.99792, 0.0253706, 0.0592605, -0.0115192, 0.974681, -0.223302, -0.0634254, 0.222155, 0.972946, 8.88178e-18, -0.220483, -4.44089e-18)
 
 [node name="QuickRigCharacter_Ctrl_LeftToeBase" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_LeftUpLeg/QuickRigCharacter_Ctrl_LeftLeg/QuickRigCharacter_Ctrl_LeftFoot" index="0"]
-transform = Transform3D(1, 0.000292258, 0.000842796, -0.00031031, 0.999769, 0.0214994, -0.000836319, -0.0214996, 0.999768, 1.90735e-08, -0.00797301, 0.0271874)
+transform = Transform3D(1, 0.000292259, 0.000842796, -0.000310311, 0.999769, 0.0214994, -0.000836319, -0.0214997, 0.999768, 1.90735e-08, -0.00797301, 0.0271874)
 
 [node name="QuickRigCharacter_Ctrl_RightUpLeg" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips" index="1"]
-transform = Transform3D(0.998761, -0.0330399, 0.0372063, 0.0112447, 0.878256, 0.478057, -0.0484716, -0.477046, 0.877541, -0.0492809, 0.00347172, -0.0259757)
+transform = Transform3D(0.993465, -0.114133, -0.000917744, 0.0415491, 0.354149, 0.934266, -0.106306, -0.928197, 0.356577, -0.0492809, 0.00347172, -0.0259757)
 
 [node name="QuickRigCharacter_Ctrl_RightLeg" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_RightUpLeg" index="0"]
-transform = Transform3D(0.999993, 0.000512061, 0.00368723, 0.00321886, 0.378619, -0.925547, -0.00186999, 0.925553, 0.378614, -1.90735e-08, -0.311837, 3.04937e-06)
+transform = Transform3D(0.997704, 0.000109535, 0.0677289, 0.0207418, 0.951457, -0.307083, -0.0644747, 0.307783, 0.949269, -1.90735e-08, -0.311837, 3.04937e-06)
 
 [node name="QuickRigCharacter_Ctrl_RightFoot" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_RightUpLeg/QuickRigCharacter_Ctrl_RightLeg" index="0"]
-transform = Transform3D(0.999983, -0.00579093, 0.000624531, 0.00409412, 0.775114, 0.631808, -0.00414284, -0.631795, 0.775125, 4.76837e-09, -0.218097, -4.44089e-18)
+transform = Transform3D(0.998959, -0.00917585, 0.0446795, 0.00200935, 0.987458, 0.157869, -0.0455677, -0.157615, 0.986449, 4.76837e-09, -0.218097, -4.44089e-18)
 
 [node name="QuickRigCharacter_Ctrl_RightToeBase" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_RightUpLeg/QuickRigCharacter_Ctrl_RightLeg/QuickRigCharacter_Ctrl_RightFoot" index="0"]
-transform = Transform3D(1, -4.1211e-08, 4.74104e-07, 4.1211e-08, 1, 8.47033e-22, -4.74104e-07, 1.95383e-14, 1, -2.46048e-06, -0.0106786, 0.0293798)
+transform = Transform3D(1, -4.1211e-08, 4.74104e-07, 4.1211e-08, 1, 1.01644e-20, -4.74104e-07, 1.95383e-14, 1, -2.46048e-06, -0.0106786, 0.0293798)
 
 [node name="QuickRigCharacter_Ctrl_Spine2" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_Spine/QuickRigCharacter_Ctrl_Spine1" index="0"]
 transform = Transform3D(1, 1.11022e-16, -3.33066e-16, -1.11022e-16, 1, -1.11022e-16, 3.33066e-16, 1.11022e-16, 0.999999, 0, 0.0181302, -0.00173825)
 
 [node name="QuickRigCharacter_Ctrl_LeftArm" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_Spine/QuickRigCharacter_Ctrl_Spine1/QuickRigCharacter_Ctrl_Spine2" index="0"]
-transform = Transform3D(-0.0153147, -0.993509, 0.112713, -0.0745528, -0.111278, -0.990989, 0.997099, -0.0235797, -0.0723648, 0.0503353, 0.019408, -0.0121656)
+transform = Transform3D(-0.0202978, -0.993918, 0.108232, -0.0749664, -0.106436, -0.991489, 0.996979, -0.0282388, -0.0723501, 0.0503353, 0.019408, -0.0121656)
 
 [node name="QuickRigCharacter_Ctrl_LeftForeArm" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_Spine/QuickRigCharacter_Ctrl_Spine1/QuickRigCharacter_Ctrl_Spine2/QuickRigCharacter_Ctrl_LeftArm" index="0"]
-transform = Transform3D(0.223835, 0.00089998, -0.974627, -0.000900631, 0.999999, 0.000716569, 0.974627, 0.000717385, 0.223836, 0.0578654, 7.10543e-17, 4.44089e-18)
+transform = Transform3D(0.223377, 0.000883814, -0.974732, -0.000885161, 0.999999, 0.000703875, 0.974732, 0.000705565, 0.223378, 0.0578654, 7.10543e-17, 4.44089e-18)
 
 [node name="QuickRigCharacter_Ctrl_LeftHand" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_Spine/QuickRigCharacter_Ctrl_Spine1/QuickRigCharacter_Ctrl_Spine2/QuickRigCharacter_Ctrl_LeftArm/QuickRigCharacter_Ctrl_LeftForeArm" index="0"]
 transform = Transform3D(1, 7.04116e-07, -0.000108166, -7.04044e-07, 1, 6.6674e-07, 0.000108166, -6.66664e-07, 1, 0.0676402, -7.10543e-17, 4.44089e-18)
 
 [node name="QuickRigCharacter_Ctrl_RightArm" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_Spine/QuickRigCharacter_Ctrl_Spine1/QuickRigCharacter_Ctrl_Spine2" index="1"]
-transform = Transform3D(0.0259454, 0.983571, -0.178652, 0.0349672, -0.179496, -0.983137, -0.999051, 0.019261, -0.0390498, -0.0503353, 0.019408, -0.0121656)
+transform = Transform3D(0.019372, 0.984583, -0.173845, 0.0286699, -0.174353, -0.984266, -0.999401, 0.0140831, -0.0316054, -0.0503353, 0.019408, -0.0121656)
 
 [node name="QuickRigCharacter_Ctrl_RightForeArm" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_Spine/QuickRigCharacter_Ctrl_Spine1/QuickRigCharacter_Ctrl_Spine2/QuickRigCharacter_Ctrl_RightArm" index="0"]
-transform = Transform3D(0.177438, -0.00117314, 0.984131, 0.00121374, 0.999999, 0.000973219, -0.984131, 0.00102179, 0.177439, -0.0578654, 7.10543e-17, -2.22045e-18)
+transform = Transform3D(0.172736, -0.00115824, 0.984967, 0.0012053, 0.999999, 0.000964539, -0.984967, 0.00102057, 0.172737, -0.0578654, 7.10543e-17, -2.22045e-18)
 
 [node name="QuickRigCharacter_Ctrl_RightHand" parent="QuickRigCharacter_Ctrl_Reference/QuickRigCharacter_Ctrl_Hips/QuickRigCharacter_Ctrl_Spine/QuickRigCharacter_Ctrl_Spine1/QuickRigCharacter_Ctrl_Spine2/QuickRigCharacter_Ctrl_RightArm/QuickRigCharacter_Ctrl_RightForeArm" index="0"]
 transform = Transform3D(0.818292, 0.475498, 0.322956, -0.545274, 0.819914, 0.174406, -0.181867, -0.318814, 0.930205, -0.0676403, -3.8147e-08, 0)
