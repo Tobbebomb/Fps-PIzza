@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://bt1er3uhdxhnb"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_b0pbf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6y0ey"]
+albedo_color = Color(1, 0.953679, 0.347762, 1)
+emission_enabled = true
+emission = Color(0.954282, 1, 0.376259, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ht0y"]
+material = SubResource("StandardMaterial3D_6y0ey")
+size = Vector3(0.05, 0.05, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6hfx7"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bf1ws"]
+albedo_color = Color(1, 0.953679, 0.347762, 1)
+emission_enabled = true
+emission = Color(0.954282, 1, 0.376259, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_uyilq"]
+material = SubResource("StandardMaterial3D_bf1ws")
+size = Vector3(0.04, 0.04, 0.04)
+
+[node name="Bullet" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000160247, 0, -0.000647843)
+script = ExtResource("1_b0pbf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_4ht0y")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00375661)
+target_position = Vector3(0, 0, -0.6)
+collide_with_areas = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.595412)
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_6hfx7")
+draw_pass_1 = SubResource("BoxMesh_uyilq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,11 +2,18 @@ class_name Player extends CharacterBody3D
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var bullet = load("res://bullet.tscn")
+var instance
+
 @onready var head = %CameraPivot
 @onready var hand = $CameraPivot/SmoothCamera/hand
 @onready var interaction = $CameraPivot/SmoothCamera/interaction
 @onready var joint = $CameraPivot/SmoothCamera/Generic6DOFJoint3D
 @onready var staticbody = $CameraPivot/SmoothCamera/StaticBody3D
+@onready var gun_anim = $CameraPivot/SmoothCamera/gun_01/AnimationPlayer
+@onready var gun_barrel = $CameraPivot/SmoothCamera/gun_01/RayCast3D
+ 
+
 
 @export_group("Controls map names")
 @export var MOVE_FORWARD: String = "move_forward"
@@ -83,6 +90,7 @@ var can_jump: bool = true
 var can_crouch: bool = true
 var can_sprint: bool = true
 var can_pause: bool = true
+
 
 var picked_object
 var pull_power = 4
@@ -188,6 +196,15 @@ func _physics_process(delta: float) -> void:
 			can_climb_timer.queue_free()
 		can_climb = true
 	
+	if Input.is_action_pressed("shot"):
+		if !gun_anim.is_playing():
+			gun_anim.play("shot")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
+	
+	
 	move_and_slide()
 	
 	
@@ -197,6 +214,9 @@ func _physics_process(delta: float) -> void:
 		var c = a.distance_to(b)
 		var calc = (a.direction_to(b))*pull_power*c
 		picked_object.set_linear_velocity(calc)
+
+		
+		
 
 
 
@@ -333,6 +353,8 @@ func pick_object():
 	if collider != null and collider is RigidBody3D:
 		picked_object = collider
 		joint.set_node_b(picked_object.get_path())
+	
+
 
 
 func remove_object():
@@ -362,3 +384,4 @@ func _add_joy_button_event(action_name: String, joy_button: JoyButton = 100) -> 
 	var joy_button_event = InputEventJoypadButton.new()
 	joy_button_event.button_index = joy_button
 	InputMap.action_add_event(action_name, joy_button_event)
+	

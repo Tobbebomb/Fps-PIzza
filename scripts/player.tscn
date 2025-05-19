@@ -242,8 +242,6 @@ height = 1.8
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_mxwtn")
-allow_crouch = false
-allow_climb = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -322,7 +320,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12
 script = ExtResource("2_1py82")
 
 [node name="gun_01" parent="CameraPivot/SmoothCamera" instance=ExtResource("3_iq0kr")]
-transform = Transform3D(-0.196353, -0.0194912, 0.0326453, -0.020893, 0.198783, -0.0069799, -0.0317665, -0.0102629, -0.197194, 0.281836, -0.34631, -0.77769)
+transform = Transform3D(0.2, 0, 0, 0, 0.199981, -0.00279244, 0, 0.00279244, 0.199981, 0.483354, -0.221432, -1.12107)
 
 [node name="StateMachine" type="Node" parent="."]
 unique_name_in_owner = true
@@ -384,3 +382,5 @@ mouse_filter = 2
 
 [connection signal="transitioned" from="StateMachine" to="." method="_on_state_machine_transitioned"]
 [connection signal="draw" from="UserInterface/CrosshairContainer/Crosshair" to="UserInterface" method="_on_crosshair_draw"]
+
+[editable path="CameraPivot/SmoothCamera/gun_01"]

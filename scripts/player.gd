@@ -2,8 +2,18 @@ class_name Player extends CharacterBody3D
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var bullet = load("res://bullet.tscn")
+var instance
+
+@onready var head = %CameraPivot
 @onready var hand = $CameraPivot/SmoothCamera/hand
 @onready var interaction = $CameraPivot/SmoothCamera/interaction
+@onready var joint = $CameraPivot/SmoothCamera/Generic6DOFJoint3D
+@onready var staticbody = $CameraPivot/SmoothCamera/StaticBody3D
+@onready var gun_anim = $CameraPivot/SmoothCamera/gun_01/AnimationPlayer
+@onready var gun_barrel = $CameraPivot/SmoothCamera/gun_01/RayCast3D
+
+
 
 @export_group("Controls map names")
 @export var MOVE_FORWARD: String = "move_forward"
@@ -83,6 +93,8 @@ var can_pause: bool = true
 
 var picked_object
 var pull_power = 4
+var rotation_power = 0.05
+var locked = false
 
 func _ready() -> void:
 	default_view_bobbing_amount = view_bobbing_amount
@@ -91,10 +103,27 @@ func _ready() -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event):
+
+	
+	
 	if Input.is_action_pressed("lclick"):
 		pick_object()
 	elif picked_object !=null:
 		remove_object()
+	if Input.is_action_pressed("rclick"):
+		rotate_objact(event)
+	
+	if Input.is_action_just_pressed("rclick"):
+		locked = true
+		#rotate_objact(event)
+	if Input.is_action_just_released("rclick"):
+		locked = false
+	if Input.is_action_just_pressed("throw"):
+		if picked_object != null:
+			var knockback = picked_object.global_position - global_position
+			picked_object.apply_central_impulse(knockback * 5)
+			remove_object()
+
 
 func check_controls() -> void:
 	if !InputMap.has_action(MOVE_FORWARD):
@@ -134,7 +163,9 @@ func check_controls() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+
+	
+	if event is InputEventMouseMotion && !locked:
 		mouse_motion = -event.relative * 0.001
 	
 	if can_pause:
@@ -164,6 +195,15 @@ func _physics_process(delta: float) -> void:
 			can_climb_timer.queue_free()
 		can_climb = true
 	
+	if Input.is_action_pressed("shot"):
+		if !gun_anim.is_playing():
+			gun_anim.play("shot")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
+	
+	
 	move_and_slide()
 	
 	
@@ -173,7 +213,10 @@ func _physics_process(delta: float) -> void:
 		var c = a.distance_to(b)
 		var calc = (a.direction_to(b))*pull_power*c
 		picked_object.set_linear_velocity(calc)
-		#direction_to is same as (a.vec3-b.vec3).normalize()
+		
+		
+		
+
 
 
 
@@ -296,17 +339,25 @@ func _on_grab_available_timeout() -> void:
 	if can_climb_timer != null:
 		can_climb_timer.queue_free()
 
+#dud rotate dont be dum poop poo head
+func rotate_objact(event):
+	if picked_object != null:
+		if event is InputEventMouseMotion:
+			staticbody.rotate_x(deg_to_rad(event.relative.y * rotation_power))
+			staticbody.rotate_y(deg_to_rad(event.relative.x * rotation_power))
 
 #grab hand du vet vad jag menar tobias
 func pick_object():
 	var collider = interaction.get_collider()
 	if collider != null and collider is RigidBody3D:
 		picked_object = collider
+		joint.set_node_b(picked_object.get_path())
 
 
 func remove_object():
 	if picked_object != null:
 		picked_object = null 
+		joint.set_node_b(joint.get_path()) 
 
 ## Triggers on every state transition. Could be useful for side effects and debugging
 ## Note that it's triggered after the 'state' "enter" method
@@ -330,3 +381,4 @@ func _add_joy_button_event(action_name: String, joy_button: JoyButton = 100) -> 
 	var joy_button_event = InputEventJoypadButton.new()
 	joy_button_event.button_index = joy_button
 	InputMap.action_add_event(action_name, joy_button_event)
+	
